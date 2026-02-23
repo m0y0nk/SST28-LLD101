@@ -1,4 +1,18 @@
 public abstract class Exporter {
-    // implied "contract" but not enforced (smell)
-    public abstract ExportResult export(ExportRequest req);
+    public final ExportResult doExport(ExportRequest req) {
+        ExportRequest normalized = normalize(req);
+        ExportRequest transformed = transform(normalized);
+        return export(transformed);
+    }
+
+    protected ExportRequest normalize(ExportRequest req) {
+        if (req == null) return new ExportRequest("", "");
+        return req;
+    }
+
+    protected ExportRequest transform(ExportRequest req) {
+        return req;
+    }
+
+    protected abstract ExportResult export(ExportRequest req);
 }
