@@ -1,0 +1,16 @@
+# Compiled outputs
+/out/
+/bin/
+*.class
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Mac OS hidden files
+.DS_Store
+
+# Miscellaneous IDE/OS caches
+.sts4-cache/
